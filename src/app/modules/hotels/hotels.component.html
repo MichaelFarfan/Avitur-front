@@ -1,0 +1,40 @@
+<div class="container-hotels w-100 row">
+    <div class="col s12 m12">
+        <div class="card-panel row" *ngFor="let hotel of _hotel.data">
+            <div class="col s12 m4">
+                <img class="hotel-img" [src]="path_img + hotel.image">
+            </div>
+            <div class="col s12 m4">
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div style="font-weight: bold;" class="flow-text blue-text text-darken-4">{{hotel.name}}</div>
+                        <div class="d-flex">
+                            <ng-template ngFor let-star [ngForOf]="createStars(hotel.stars)">
+                                <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                            </ng-template>
+                        </div>
+                        <div class="d-flex w-100 mt-1">
+                            <ng-template ngFor let-feature [ngForOf]="hotel.amenities">
+                                <img class="svg-sm mr-2" [src]="path_icon + feature +'.svg'">
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-dash col s12 m2 offset-m2 d-flex flex-column">
+                <small class="grey-text text-lighten-1 center-align">Precio por noche por habitación</small>
+                <div class="orange-text text-accent-2 center-align flow-text">
+                    <h4>ARS <b>{{hotel.price | number:'1.0-0'}}</b></h4>
+                </div>
+                <a class="btn-small waves-effect waves-light btn blue darken-4 mt-1">ver hotel</a>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m 12" *ngIf="_hotel.data.length == 0">
+        <div class="card-panel d-flex jc-center ai-center">
+            <a class="btn-floating pulse cyan d-flex jc-center ai-center mr-2"><img class="svg"
+                    [src]="path_icon + 'info-solid.svg'" alt=""></a>
+            <h5 class="center-align">No se encontraron resultados</h5>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<ng-container *ngIf="!mobile">
+    <h5 class="grey-text text-darken-1">Filtros</h5>
+    <div class="" [formGroup]="form">
+        <ul class="collection z-depth-1">
+            <li class="collection-item header-section">
+                <img class="svg" src="../../../assets/icons/filters/search.svg">
+                <div class="">Nombre del hotel</div>
+            </li>
+            <li class="collection-item row d-flex jc-between ai-center">
+                <img class="svg col s2" src="../../../assets/icons/amenities/bed-solid.svg">
+                <div class="input-field col s10">
+                    <input placeholder="Hotel" (keyup)="filter()" id="first_name" type="text" class="validate"
+                        formControlName="search">
+                </div>
+            </li>
+            <li class="collection-item header-section">
+                <img class="svg" src="../../../assets/icons/filters/star.svg">
+                <div class="">Estrellas</div>
+            </li>
+            <li class="collection-item">
+                <p>
+                    <label>
+                        <input type="checkbox" formControlName="all" (change)="clear_checks()" />
+                        <span>Todas las estrellas</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" (change)="clear_all()" formControlName="star1" />
+                        <span><img class="svg" src="../../../assets/icons/filters/star-yellow.svg"></span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" (change)="clear_all()" formControlName="star2" />
+                        <span>
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                        </span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" (change)="clear_all()" formControlName="star3" />
+                        <span>
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                        </span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" (change)="clear_all()" formControlName="star4" />
+                        <span>
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                        </span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" (change)="clear_all()" formControlName="star5" />
+                        <span>
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                            <img class="svg" src="../../../assets/icons/filters/star-yellow.svg">
+                        </span>
+                    </label>
+                </p>
+            </li>
+        </ul>
+    </div>
+</ng-container>

@@ -1,0 +1,27 @@
+.container-hotels {
+    overflow-y: scroll;
+    height: 85vh;
+    margin-top: 1rem;
+    padding: 0.5rem;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #0d47a1;
+        border-radius: 20px;
+    }
+
+    & .card-panel {
+        margin-bottom: 1rem;
+        & .hotel-img {
+            width: 100%;
+            height: 15rem;
+        }
+        & .border-dash{
+            border-left: 1px solid #bdbdbd;
+            border-left-style: dashed;
+            height: 15rem;
+        }
+    }
+}
